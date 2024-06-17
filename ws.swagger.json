@@ -1,0 +1,281 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Itiner Workspace integration",
+    "description": "The Itiner Workspace Integration connector allows you to integrate your Itiner Workspace application with PowerApps. It provides various actions to start, stop, update, and manage workflows within the Itiner Workspace. Using this connector, you can automate and streamline workflow operations directly from your PowerApps applications.",
+    "version": "1.0"
+  },
+  "host": "teszt.itiner360.com",
+  "basePath": "/workspace/api/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/integration/workflow/start": {
+      "post": {
+        "summary": "Start workflow",
+        "description": "Start workflow",
+        "operationId": "StartWorkflow",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "X-Custom-APIKey",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerTemplateUniqueName": {
+                  "type": "string",
+                  "description": "ItinerTemplateUniqueName"
+                },
+                "ItinerStarterUserName": {
+                  "type": "string",
+                  "description": "ItinerStarterUserName"
+                },
+                "ItinerManagerUserName": {
+                  "type": "string",
+                  "description": "ItinerManagerUserName"
+                },
+                "ItinerDefaultUserName": {
+                  "type": "string",
+                  "description": "ItinerDefaultUserName"
+                },
+                "Variables": {
+                  "type": "object",
+                  "description": "Variables"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerUniqueName": {
+                  "type": "string",
+                  "description": "ItinerUniqueName"
+                },
+                "ResponseStatus": {
+                  "type": "object",
+                  "properties": {
+                    "ErrorCode": {
+                      "type": "string",
+                      "description": "ErrorCode"
+                    },
+                    "Message": {
+                      "type": "string",
+                      "description": "Message"
+                    },
+                    "StackTrace": {
+                      "type": "string",
+                      "description": "StackTrace"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integration/variables": {
+      "put": {
+        "description": "Update variables in a workflow",
+        "summary": "Update variables in a workflow",
+        "operationId": "UpdateVariables",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "X-Custom-APIKey",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerUniqueName": {
+                  "type": "string",
+                  "description": "ItinerUniqueName"
+                },
+                "Variables": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Variables"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/integration/workflow/stop": {
+      "put": {
+        "summary": "Stop workflow",
+        "description": "Stop workflow",
+        "operationId": "StopWorkflow",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "X-Custom-APIKey",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerUniqueName": {
+                  "type": "string",
+                  "description": "ItinerUniqueName"
+                },
+                "ProtocolStopReason": {
+                  "type": "string",
+                  "description": "ProtocolStopReason"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerUniqueName": {
+                  "type": "string",
+                  "description": "ItinerUniqueName"
+                },
+                "ResponseStatus": {
+                  "type": "object",
+                  "properties": {
+                    "ErrorCode": {
+                      "type": "string",
+                      "description": "ErrorCode"
+                    },
+                    "Message": {
+                      "type": "string",
+                      "description": "Message"
+                    },
+                    "StackTrace": {
+                      "type": "string",
+                      "description": "StackTrace"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integration/workflow/trash": {
+      "put": {
+        "summary": "Trash workflow",
+        "description": "Trash workflow",
+        "operationId": "TrashWorkflow",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "X-Custom-APIKey",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerUniqueName": {
+                  "type": "string",
+                  "description": "ItinerUniqueName"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ItinerUniqueName": {
+                  "type": "string",
+                  "description": "ItinerUniqueName"
+                },
+                "ResponseStatus": {
+                  "type": "object",
+                  "properties": {
+                    "ErrorCode": {
+                      "type": "string",
+                      "description": "ErrorCode"
+                    },
+                    "Message": {
+                      "type": "string",
+                      "description": "Message"
+                    },
+                    "StackTrace": {
+                      "type": "string",
+                      "description": "StackTrace"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "APIKey": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "security": [
+    {
+      "APIKey": []
+    }
+  ],
+  "tags": []
+}
