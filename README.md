@@ -71,7 +71,7 @@ Ensure you have the Swagger API documentation file (`ws.swagger.json`) ready. Th
 
 3. **Use the Connector:**
    - Use the actions defined in your custom connector within your app. For example, to start a workflow, you can call the `StartWorkflow` action with the required parameters.
-   - Here’s an example of how you might use the custom connector to start a workflow:
+   - Hereâ€™s an example of how you might use the custom connector to start a workflow:
 
 		```PowerApps
 		// Assuming you have added the custom connector and named it "ItinerConnector"
@@ -84,11 +84,11 @@ Ensure you have the Swagger API documentation file (`ws.swagger.json`) ready. Th
 			Variables: {
 				// Add your variables here
 			}
-		}); ```
-
+		}); 
+        ```
 
 ## Conclusion
 
 You have successfully created a custom connector in PowerApps using Swagger API documentation and created a connection instance. You can now integrate your application with other applications through PowerApps using this connector.
 
-For more detailed information, refer to the official [Microsoft PowerApps documentation](https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/custom-connectors/define-openapi-definition).
+For more detailed information, refer to the official [Microsoft PowerApps documentation](https://learn.microsoft.com/en-us/connectors/custom-connectors/define-openapi-definition).
